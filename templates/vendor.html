@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      
+    <link rel="stylesheet" href="../static/files/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+    <!-- js resource -->
+    <script src="../static/files/js/bootstrap.js"></script>
+    <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+    <style>
+        img{
+            border-radius: 300px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+        {% include 'navbar.html' %}
+    <section class="row">
+        <div class="col-md-4">
+            <h2><i>CREATE A VENDOR ACCOUNT</i></h2>
+            
+            <form action="/vendor" method="post">
+                <input type="text" name="firstname" placeholder="Your First Name"> <br>
+                <br>
+            <input type="text" name="lastname" placeholder="Your Last Name"><br>
+            <br>
+            <input type="text" name="county" placeholder="Your County"><br>
+            <br>
+            <input type="text" name="password" placeholder="Yout Password"><br>
+            <br>
+            <input type="text" name="confirm" placeholder="Confirm "><br>
+            <br>
+            <input type="text" name="email" placeholder="Your Email">
+            <br><br>
+            <input type="submit" value="Add Vendor" class="btn btn-info">
+            </form>
+
+        </div>
+        <div class="col-md-8">
+            {% include 'carousel.html' %}
+
+        </div>
+
+    </section>
+
+
+    </div>
+</body>
+</html>

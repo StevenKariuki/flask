@@ -1,0 +1,28 @@
+<section class="row">
+    <div class="col-md-12">
+        <nav class="navbar navbar-expand-md navbar-light bg-light p-3">
+            <a href="home.html" class="navabar-brand">NEMOS <b class="text-success">Enterprises</b></a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#soko"><span class="navbar-toggle-icon"></span></button>
+            <div class="collapse navbar-collapse" id="soko">
+                <div class="navbar-nav">
+                    <a href="/" class="nav-item nav-link">Home</a>
+                    <a href="" class="nav-item nav-link">Blog</a>
+                    <a href="/about" class="nav-item nav-link">About</a>
+                    <a href="/contactus" class="nav-item nav-link">contact us</a>
+                    <a href="/vendor" class="nav-item nav-link">Vendor</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+
+                    {% if session['key'] %}
+
+                    <a href="/logout" class="nav-item nav-link">Logout</a>
+
+                    {% else %}
+                    <a href="/login" class="nav-item nav-link">login</a>
+                    <a href="/signup" class="nav-item nav-link">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>

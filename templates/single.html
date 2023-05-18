@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/files/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+    <!-- js resource -->
+    <script src="../static/files/js/bootstrap.js"></script>
+    <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+</head>
+<body>
+    <br>
+    {% include 'navbar.html'%}
+    <br>
+    <section class="row">
+        <div class="col-md-4">
+            <h4>Product Name:Name <br class="text-success">{{single_record[1]}}<br></h4>
+            <img src="../static/photos/{{single_record[5]}}" alt="single product" width="300" height="600" class="img-thumbnail shadow p-4">
+
+        </div>
+
+        <div class="col-md-8">
+            <p class="text-muted"> {{single_record[2]}}</p>
+            <h4>KES {{single_record[3]}}</h4>
+            <p class="text-danger">Category:{{4}}</p>
+            <br>
+            <span class="badge bg-warning">Free Delivery</span><br><br>
+            {% if session['key'] %}
+            <h6>Welcome</h6>
+            <input type="number" name="quantity"placeholder=" Enter your Quantity" class="form-control"><br>
+            <form action="/mpesa" method="post">
+                <input type="tel" name="phone" placeholder="Enter Your Phone e.g 2457xxxxxxxx" class="form-control"><br>
+
+                <input type="number" name="amount" placeholder="Enter the Amount" class="form-control"><br>
+
+                <input type="submit" value="Lipa na mpesa" class="btn btn-success">
+            </form>
+           
+
+            {% else %}
+
+            <h4>PLease Sign in To make Payment</h4>
+            <a href="/login" class="btn btn-dark btn-sm">Sign in Account</a>
+
+            {% endif %}
+        </div>
+
+
+    </section>
+    <br>
+    <section class="slider p-5">
+        <h4>What you might also like...</h4>
+        <ul class="autoWidth">
+            {% for items in similar %}
+            <li>
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="../static/photos/{{items[5]}}" alt="products">
+                        <div class="overlay">
+                            <a href="/single/{{items[0]}}" class="btn btn-success">Buy now</a>
+
+                        </div>
+                        <div class="detail-box">
+                            <p>{{items[1]}}</p>
+                            <b class="text-warning">{{items[3]}} KES</b>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+
+    </section>
+</body>
+</html>

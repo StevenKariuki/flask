@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+
+        <!-- css resource files -->
+        <link rel="stylesheet" href="../static/files/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/files/css/lightslider.css">
+        <link rel="stylesheet" href="../static/files/css/style.css">
+    
+    
+        <!-- js resource files -->
+        <script src="../static/files/js/bootstrap.js"></script>
+        <script src="../static/files/js/jquery.js"></script>
+        <script src="../static/files/js/lightslider.js"></script>
+        <script src="../static/files/js/script.js"></script>
+
+        <style>
+            body{
+                background-image: url(../static/photos/background.png);
+            }
+            img{
+                height: 400px;
+                border-radius: 1500px;
+            }
+            h3{
+                text-decoration: overline;
+                
+            }
+        </style>
+        
+</head>
+<body>
+    <br>
+    {% include 'navbar.html' %}
+    <br>
+    <section class="row">
+        <div class="col-md-4">
+            <h3 class="text-white">Create an Account</h3>
+            <span class="text-danger">{{error_message}}</span>
+            <span class="text-success">{{success_message}}</span>
+            <form action="/register" method="post">
+                <input type="text" name="username" placeholder="Enter Username" class="form-control"> <br>
+
+                <input type="email" name="email" placeholder="Enter Email" class="form-control"> <br>
+
+                <input type="tel" name="phone" placeholder="Enter Phone Number" class="form-control"> <br>
+
+                <input type="password" name="password" placeholder="Enter Password" class="form-control"> <br>
+
+                <input type="password" name="confirm" placeholder="Confirm Password" class="form-control"><br>
+
+                <input type="submit" value="Sign up now" class="btn btn-secondary"> <br>
+
+                <a href="/login">Already Have An Account?, Login</a>
+
+            </form>
+
+        </div>
+
+        <div class="col-md-8">
+            {% include 'carousel.html' %}
+
+        </div>
+
+    </section>
+    
+</body>
+</html>

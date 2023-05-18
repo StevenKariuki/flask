@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN FORM</title>
+    
+    <!-- CSS resource files -->
+    
+    <link rel="stylesheet" href="../static/files/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+    <!-- js resource -->
+    <script src="../static/files/js/bootstrap.js"></script>
+    <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+    <style>
+        img{
+            height: 250px ;
+            border-radius: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    {% include 'navbar.html' %}
+    <br>
+    <section class="row">
+        <div class="col-md-4">
+            <h4>Login Here...</h4>
+            <span class="text-danger">{{error_message}}</span>
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Enter Username" class="form-control"><br>
+                <input type="password" name="password" placeholder="Eneter Password" class="form-control"><br>
+                <input type="submit" value="login Now" class="btn btn-info"><br>
+                <a href="/register"> No Accont Yet?,Register </a><br>
+                <a href="">Forgot Password?</a>
+
+            </form>
+
+        </div>
+        <div class="col-md-8">
+            {% include 'carousel.html'  %}
+
+        </div>
+
+    </section>
+</body>
+</html>
